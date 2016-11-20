@@ -1,0 +1,6 @@
+FROM opensuse
+
+# Install deps
+RUN zypper in -y python-py2pack python-setuptools
+
+RUN zypper clean --all
