@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+MESSAGE=`cat /etc/app/simple.conf`
+echo $MESSAGE
