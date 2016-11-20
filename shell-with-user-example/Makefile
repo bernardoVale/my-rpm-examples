@@ -1,7 +1,7 @@
 VERSION= $(shell cat VERSION)
 current_dir = $(shell pwd)
 
-all: clean compress build check
+all: clean compress build check test
 
 v:
 	@echo "App Version v$(VERSION)"
@@ -23,6 +23,6 @@ check:
 	-v $(current_dir)/check.sh:/check.sh gvangool/rpmbuilder:centos7 /check.sh
 
 test:
-		docker build -t test .
+		docker build --build-arg version=$(VERSION) -t test .
 		@echo "Execute below docker command to access the container:"
 		@echo "docker run -it --rm test"
