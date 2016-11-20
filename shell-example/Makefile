@@ -1,7 +1,10 @@
-VERSION=0.2
+VERSION= $(shell cat VERSION)
 current_dir = $(shell pwd)
 
 all: clean compress build check
+
+version:
+	@echo "App Version v$(VERSION)"
 
 clean:
 	rm -rf *.tar.gz

@@ -1,7 +1,10 @@
-VERSION=0.2
+VERSION= $(shell cat VERSION)
 current_dir = $(shell pwd)
 
 all: clean compress build check
+
+v:
+	@echo "App Version v$(VERSION)"
 
 clean:
 	rm -rf *.tar.gz
@@ -13,7 +16,7 @@ compress:
 	mv app-$(VERSION) app
 
 build:
-	docker run -it --rm -v $(current_dir):/app -v $(current_dir)/build.sh:/build.sh gvangool/rpmbuilder:centos7 /build.sh
+	docker run -it --rm -v $(current_dir):/app -v $(current_dir)/build.sh:/build.sh gvangool/rpmbuilder:centos7 /build.sh $(VERSION)
 
 check:
 	docker run -it --rm -v $(current_dir)/app-$(VERSION)-1.noarch.rpm:/app.rpm \

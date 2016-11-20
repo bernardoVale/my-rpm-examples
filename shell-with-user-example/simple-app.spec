@@ -1,10 +1,11 @@
+#%define app_version %(cat %{sourcedir}/VERSION)
 %define app_user  %{name}
 %define app_group %{name}
 %define app_data  %{_localstatedir}/lib/%{name}
 
 Summary: Shell script and conf files example
 Name: app
-Version: 0.2
+Version: %{_app_version}
 Release: 1
 URL:     http://github.com/bernardovale/my-rpm-examples
 License: MIT

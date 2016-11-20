@@ -1,6 +1,6 @@
 FROM centos
 
-ARG version=0.2
+ARG version
 
 ADD app-$version-1.noarch.rpm /app.rpm
 
