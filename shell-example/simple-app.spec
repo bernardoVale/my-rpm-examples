@@ -1,9 +1,9 @@
-Summary: The do it all script. (Enterprise quality)
+Summary: Shell script and conf files example
 Name: app
 Version: 0.2
 Release: 1
-URL:     http://github.com/bernardovale
-License: GPL
+URL:     http://github.com/bernardovale/my-rpm-examples
+License: MIT
 Group: Applications/Internet
 BuildRoot: %{_tmppath}/%{name}-root
 Requires: bash
