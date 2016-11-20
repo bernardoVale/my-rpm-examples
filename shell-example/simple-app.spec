@@ -11,7 +11,7 @@ Source0: app-%{version}.tar.gz
 BuildArch: noarch
 
 %description
-A shell script.
+Shell script example
 
 %prep
 %setup -q

@@ -20,7 +20,6 @@ check:
 	-v $(current_dir)/check.sh:/check.sh gvangool/rpmbuilder:centos7 /check.sh
 
 test:
-		docker run -d --name rpm_test centos /sbin/init
-		docker cp app-$(VERSION)-1.noarch.rpm rpm_test:/
-		docker exec rpm_test bash
-		docker stop rpm_test && docker rm rpm_test
+		docker build -t test .
+		@echo "Execute below docker command to access the container:"
+		@echo "docker run -it --rm test"
